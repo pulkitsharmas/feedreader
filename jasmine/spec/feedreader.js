@@ -91,7 +91,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          it('load feed', function() {
-            expect($('.feed .entry').html().length).not.toBe(0);
+            expect($('.feed .entry').length).not.toBeGreaterThan(0);
          });
     });
 
@@ -105,9 +105,10 @@ $(function() {
          // Loading old feeds;
          beforeEach(function(done) {
             loadFeed(0, function() {
+                oldFeed = $('.feed').html();
                 done();
             });
-            oldFeed = $('.feed').html();
+            
          });
          it('changes content', function(done) {
             loadFeed(1, function() {
