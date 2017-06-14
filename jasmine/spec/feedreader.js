@@ -62,7 +62,7 @@ $(function() {
         });
        
          it('load feed', function() {
-            expect($('.feed .entry').length).not.toBeGreaterThan(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
          });
     });
 
